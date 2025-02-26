@@ -18,8 +18,7 @@ func init() {
 
 func Proto() error {
 	files := make([]string, 0)
-	api := filepath.Join(pwd, "proto")
-	err := filepath.Walk(api, func(path string, info os.FileInfo, err error) error {
+	err := filepath.Walk(pwd, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return errors.Wrapf(err, "[filepath:%s]读取失败!", path)
 		}
@@ -27,7 +26,7 @@ func Proto() error {
 			return nil
 		}
 		if filepath.Ext(info.Name()) == ".proto" {
-			relName, _ := filepath.Rel(api, path)
+			relName, _ := filepath.Rel(pwd, path)
 			if strings.Contains(relName, "third_party") {
 				return nil
 			}
@@ -58,8 +57,7 @@ func Proto() error {
 }
 
 func Clear() error {
-	api := filepath.Join(pwd, "proto")
-	err := filepath.Walk(api, func(path string, info os.FileInfo, err error) error {
+	err := filepath.Walk(pwd, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return errors.Wrapf(err, "[filepath:%s]读取失败!", path)
 		}
