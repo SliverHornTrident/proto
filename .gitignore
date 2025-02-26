@@ -4,4 +4,3 @@ vendor/
 
 *.pb.go
 *.pb.validate.go
-/proto/openapi.yaml
