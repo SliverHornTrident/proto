@@ -4,3 +4,4 @@ vendor/
 
 *.pb.go
 *.pb.validate.go
+.openapi.yaml
