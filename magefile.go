@@ -39,14 +39,14 @@ func Proto() error {
 		return err
 	}
 	args := []string{
-		"--proto_path=./proto",
-		"--proto_path=./proto/third_party",
-		"--go_out=paths=source_relative:./proto",
-		"--go-http_out=paths=source_relative:./proto",
-		"--go-grpc_out=paths=source_relative:./proto",
-		"--go-errors_out=paths=source_relative:./proto",
-		"--validate_out=paths=source_relative,lang=go:./proto",
-		"--openapi_out=fq_schema_naming=true,default_response=false:./proto",
+		"--proto_path=.",
+		"--proto_path=./third_party",
+		"--go_out=paths=source_relative:.",
+		"--go-http_out=paths=source_relative:.",
+		"--go-grpc_out=paths=source_relative:.",
+		"--go-errors_out=paths=source_relative:.",
+		"--validate_out=paths=source_relative,lang=go:.",
+		"--openapi_out=fq_schema_naming=true,default_response=false:.",
 	}
 	args = append(args, files...)
 	err = sh.Run("protoc", args...)
