@@ -1,0 +1,19 @@
+syntax = "proto3";
+package request;
+
+option go_package = "github.com/SliverHornTrident/sdk/proto/request;request";
+
+message User {
+  string role = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message Context {
+  User user = 1;
+  string plugin_id = 2;
+  string user_agent = 3;
+  string api_version = 4;
+  string plugin_version = 5;
+  map<string, string> config = 6;
+}

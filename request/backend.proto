@@ -1,0 +1,16 @@
+syntax = "proto3";
+package request;
+
+import "common/values.proto";
+import "request/context.proto";
+
+option go_package = "github.com/SliverHornTrident/sdk/proto/request;request";
+
+message Backend {
+  Context context = 1;
+  bytes body = 2;
+  string url = 3;
+  string path = 4;
+  string method = 5;
+  map<string, common.Values> header = 6;
+}

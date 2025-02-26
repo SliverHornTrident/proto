@@ -1,0 +1,14 @@
+syntax = "proto3";
+package proto;
+
+import "request/stream.proto";
+import "response/stream.proto";
+
+option go_package = "github.com/SliverHornTrident/sdk/proto;proto";
+
+// Stream .
+service Stream {
+  rpc Stream(request.Stream) returns (stream response.Stream);
+  rpc Subscribe(request.Subscribe) returns (response.Subscribe);
+  rpc Publisher(request.Publisher) returns (response.Publisher);
+}

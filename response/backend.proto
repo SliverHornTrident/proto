@@ -1,0 +1,9 @@
+syntax = "proto3";
+package response;
+
+option go_package = "github.com/SliverHornTrident/sdk/proto/response;response";
+
+message Backend {
+  int64 code = 1;
+  bytes body = 2;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package proto;
+
+import "request/diagnostics.proto";
+import "response/diagnostics.proto";
+
+option go_package = "github.com/SliverHornTrident/sdk/proto;proto";
+
+// Diagnostics diagnostics service: health check, metrics collect
+// Diagnostics 诊断服务：健康检查、指标收集
+service Diagnostics {
+  rpc HealthCheck(request.HealthCheck) returns (response.HealthCheck);
+  rpc MetricsCollect(request.MetricsCollect) returns (response.MetricsCollect);
+}

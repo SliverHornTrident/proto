@@ -1,0 +1,24 @@
+syntax = "proto3";
+package request;
+
+import "request/context.proto";
+
+option go_package = "github.com/SliverHornTrident/sdk/proto/request;request";
+
+message Stream {
+  bytes body = 1;
+  string path = 2;
+  Context context = 3;
+}
+
+message Subscribe {
+  bytes body = 1;
+  string path = 2;
+  Context context = 3;
+}
+
+message Publisher {
+  bytes body = 1;
+  string path = 2;
+  Context context = 3;
+}

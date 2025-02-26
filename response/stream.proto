@@ -1,0 +1,23 @@
+syntax = "proto3";
+package response;
+
+option go_package = "github.com/SliverHornTrident/sdk/proto/response;response";
+
+message Stream {
+  bytes data = 1;
+}
+
+message Subscribe {
+  enum Status {
+    UNKNOWN = 0;
+    OK = 1;
+    NOT_FOUND = 2;
+    PERMISSION_DENIED = 3;
+  }
+  bytes data = 1;
+  Status status = 2;
+}
+
+message Publisher {
+  bytes data = 1;
+}

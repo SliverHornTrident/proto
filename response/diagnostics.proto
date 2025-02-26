@@ -1,0 +1,19 @@
+syntax = "proto3";
+package response;
+
+option go_package = "github.com/SliverHornTrident/sdk/proto/response;response";
+
+message HealthCheck {
+  enum Status {
+    UNKNOWN = 0;
+    OK = 1;
+    ERROR = 2;
+  }
+  Status status = 1;
+  string message = 2;
+  bytes details = 3;
+}
+
+message MetricsCollect {
+  bytes prometheus = 1;
+}

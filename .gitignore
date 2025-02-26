@@ -1,0 +1,7 @@
+vendor/
+.vscode/
+.idea/
+
+*.pb.go
+*.pb.validate.go
+/proto/openapi.yaml

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package proto;
+
+import "request/backend.proto";
+import "response/backend.proto";
+
+option go_package = "github.com/SliverHornTrident/sdk/proto;proto";
+
+service Backend {
+  rpc Backend(request.Backend) returns (response.Backend);
+}
